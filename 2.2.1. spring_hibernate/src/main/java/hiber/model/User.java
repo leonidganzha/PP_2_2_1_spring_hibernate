@@ -1,7 +1,10 @@
 package hiber.model;
 
+import org.springframework.stereotype.Component;
 import javax.persistence.*;
+import java.util.Objects;
 
+@Component
 @Entity
 @Table(name = "users")
 public class User {
@@ -24,7 +27,7 @@ public class User {
    private Car userCar;
 
    public User() {}
-   
+
    public User(String firstName, String lastName, String email) {
       this.firstName = firstName;
       this.lastName = lastName;
@@ -74,5 +77,18 @@ public class User {
 
    public void setCar(Car userCar) {
       this.userCar = userCar;
+   }
+
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      User user = (User) o;
+      return id.equals(user.id) && firstName.equals(user.firstName) && lastName.equals(user.lastName) && email.equals(user.email) && Objects.equals(userCar, user.userCar);
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(id, firstName, lastName, email, userCar);
    }
 }
