@@ -1,10 +1,8 @@
 package hiber.model;
 
-import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Component
 @Entity
 @Table(name = "users")
 public class User {
@@ -28,14 +26,10 @@ public class User {
 
    public User() {}
 
-   public User(String firstName, String lastName, String email) {
+   public User(String firstName, String lastName, String email, Car car) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.email = email;
-   }
-
-   public User(String firstName, String lastName, String email, Car car) {
-      this(firstName, lastName, email);
       this.userCar = car;
    }
 

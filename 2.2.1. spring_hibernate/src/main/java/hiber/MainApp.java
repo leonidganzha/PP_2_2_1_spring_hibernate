@@ -31,7 +31,7 @@ public class MainApp {
       userService.add(user3);
       userService.add(user4);
 
-      List<User> users = userService.allUsers();
+      List<User> users = userService.getAllUsers();
       for (User user : users) {
          System.out.println("Id = "+user.getId());
          System.out.println("First Name = "+user.getFirstName());

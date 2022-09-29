@@ -1,11 +1,8 @@
 package hiber.model;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import java.util.Objects;
 
-@Component
 @Entity
 @Table(name = "cars")
 public class Car {

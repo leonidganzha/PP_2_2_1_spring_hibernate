@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface UserService {
     void add(User user);
-    List<User> allUsers();
+    List<User> getAllUsers();
     User getOwner(String model, int series);
 }

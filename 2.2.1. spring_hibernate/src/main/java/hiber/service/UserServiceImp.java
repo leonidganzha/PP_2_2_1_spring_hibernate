@@ -8,11 +8,9 @@ import java.util.List;
 
 @Service
 public class UserServiceImp implements UserService {
-   private User user;
    private UserDao userDao;
 
-   public UserServiceImp(User user, UserDao userDao) {
-      this.user = user;
+   public UserServiceImp(UserDao userDao) {
       this.userDao = userDao;
    }
 
@@ -24,8 +22,8 @@ public class UserServiceImp implements UserService {
 
    @Transactional(readOnly = true)
    @Override
-   public List<User> allUsers() {
-      return userDao.allUsers();
+   public List<User> getAllUsers() {
+      return userDao.getAllUsers();
    }
 
    @Transactional(readOnly = true)
